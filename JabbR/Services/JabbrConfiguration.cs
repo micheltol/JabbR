@@ -56,5 +56,13 @@ namespace JabbR.Services
                 return ConfigurationManager.AppSettings["jabbr:releaseTime"];
             }
         }
+
+        public string BaseUrl
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["jabbr:baseUrl"];
+            }
+        }
     }
 }
