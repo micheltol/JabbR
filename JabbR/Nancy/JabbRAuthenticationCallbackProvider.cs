@@ -10,11 +10,13 @@ namespace JabbR.Nancy
 {
     public class JabbRAuthenticationCallbackProvider : IAuthenticationCallbackProvider
     {
-        private readonly IJabbrRepository _repository;
+        private readonly IJabbrRepository repository;
+        private readonly IValidatorUserInformationService validatorUserInformationService;
 
-        public JabbRAuthenticationCallbackProvider(IJabbrRepository repository)
+        public JabbRAuthenticationCallbackProvider(IJabbrRepository repository,IValidatorUserInformationService validatorUserInformationService)
         {
-            _repository = repository;
+            this.repository = repository;
+            this.validatorUserInformationService = validatorUserInformationService;
         }
 
         public dynamic Process(NancyModule nancyModule, AuthenticateCallbackData model)
@@ -32,10 +34,22 @@ namespace JabbR.Nancy
             }
             else
             {
-                UserInformation information = model.AuthenticatedClient.UserInformation;
-                var claims = new List<Claim>();
-                claims.Add(new Claim(ClaimTypes.NameIdentifier, information.Id));
-                claims.Add(new Claim(ClaimTypes.AuthenticationMethod, model.AuthenticatedClient.ProviderName));
+                var information = model.AuthenticatedClient.UserInformation;
+                
+                //Exra custom validation to check if the user has a specific domainname.
+                if (!validatorUserInformationService.Validate(information))
+                {
+                    nancyModule.SignOut();
+                    return response;
+                }
+
+                var claims = new List<Claim>
+                                 {
+                                     new Claim(ClaimTypes.NameIdentifier, information.Id),
+                                     new Claim(
+                                         ClaimTypes.AuthenticationMethod,
+                                         model.AuthenticatedClient.ProviderName)
+                                 };
 
                 if (!String.IsNullOrEmpty(information.UserName))
                 {

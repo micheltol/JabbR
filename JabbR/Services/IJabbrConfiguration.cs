@@ -9,5 +9,6 @@
         string DeploymentBranch { get; }
         string DeploymentTime { get; }
         string BaseUrl { get; }
+        string[] ValidEmailSuffix { get; }
     }
 }

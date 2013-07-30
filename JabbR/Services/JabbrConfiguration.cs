@@ -64,5 +64,13 @@ namespace JabbR.Services
                 return ConfigurationManager.AppSettings["jabbr:baseUrl"];
             }
         }
+
+        public string[] ValidEmailSuffix
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["jabbr:ValidEmailSuffix"].Split(';');
+            }
+        }
     }
 }
