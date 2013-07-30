@@ -93,6 +93,9 @@ namespace JabbR
             kernel.Bind<IAuthenticationService>()
                   .To<AuthenticationService>();
 
+            kernel.Bind<IValidatorUserInformationService>()
+                    .To<ValidatorUserInformationService>();
+
             kernel.Bind<IAuthenticationCallbackProvider>()
                   .To<JabbRAuthenticationCallbackProvider>();
 

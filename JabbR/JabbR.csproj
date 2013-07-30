@@ -14,7 +14,7 @@
     <RootNamespace>JabbR</RootNamespace>
     <AssemblyName>JabbR</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <FileUpgradeFlags>
@@ -864,6 +864,8 @@
     <EmbeddedResource Include="Migrations\201307181924477_AddUserPreferences.resx">
       <DependentUpon>201307181924477_AddUserPreferences.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\PublishProfiles\micheltol.nl.pubxml" />
+    <None Include="Scripts\jquery-1.9.0.intellisense.js" />
     <Content Include="Scripts\ba-linkify.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1094,6 +1096,7 @@
     <Compile Include="Services\IJabbrConfiguration.cs" />
     <Compile Include="Services\ISettingsManager.cs" />
     <Compile Include="Services\IUserAuthenticator.cs" />
+    <Compile Include="Services\IValidatorUserInformationService.cs" />
     <Compile Include="Services\JabbrConfiguration.cs" />
     <Compile Include="Services\PresenceMonitor.cs" />
     <Compile Include="Services\SettingsKeyProvider.cs" />
@@ -1369,7 +1372,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>16207</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/JabbR</IISUrl>
+          <IISUrl>http://localhost:16207/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
