@@ -859,7 +859,6 @@
     <EmbeddedResource Include="Migrations\201306180311195_ExtendChatUserFlagLength.resx">
       <DependentUpon>201306180311195_ExtendChatUserFlagLength.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Properties\PublishProfiles\micheltol.nl.pubxml" />
     <None Include="Scripts\jquery-1.9.0.intellisense.js" />
     <Content Include="Scripts\ba-linkify.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -1313,7 +1312,15 @@
   <ItemGroup>
     <Content Include="Chat.emoji.js" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Jabbr.AuthenticationProviders\Jabbr.AuthenticationProviders.csproj">
+      <Project>{f06d8663-32ca-489f-8139-776e7201a06c}</Project>
+      <Name>Jabbr.AuthenticationProviders</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
