@@ -151,9 +151,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Nancy.Owin.0.18.0\lib\net40\Nancy.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Nancy.SimpleAuthentication, Version=0.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Nancy.SimpleAuthentication, Version=0.3.4.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Nancy.SimpleAuthentication.0.3.3\lib\net40\Nancy.SimpleAuthentication.dll</HintPath>
+      <HintPath>..\packages\Nancy.SimpleAuthentication.0.3.4\lib\net40\Nancy.SimpleAuthentication.dll</HintPath>
     </Reference>
     <Reference Include="Nancy.ViewEngines.Razor, Version=0.18.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -183,9 +183,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\RestSharp.104.1\lib\net4\RestSharp.dll</HintPath>
     </Reference>
-    <Reference Include="SimpleAuthentication.Core, Version=0.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="SimpleAuthentication.Core, Version=0.3.4.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SimpleAuthentication.Core.0.3.3\lib\net40\SimpleAuthentication.Core.dll</HintPath>
+      <HintPath>..\packages\SimpleAuthentication.Core.0.3.4\lib\net40\SimpleAuthentication.Core.dll</HintPath>
     </Reference>
     <Reference Include="SquishIt.Framework, Version=0.9.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -1361,6 +1361,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Chat.emoji.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Jabbr.AuthenticationProviders\Jabbr.AuthenticationProviders.csproj">
+      <Project>{f06d8663-32ca-489f-8139-776e7201a06c}</Project>
+      <Name>Jabbr.AuthenticationProviders</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
